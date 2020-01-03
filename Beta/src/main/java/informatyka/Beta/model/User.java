@@ -1,4 +1,4 @@
-package informatyka.alfa.model;
+package informatyka.Beta.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +16,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "alfauser")
+@Table(name = "betauser")
 public class User {
 
     @Id
@@ -35,12 +35,12 @@ public class User {
     private String password;
 
     @Column(name = "name")
-    @NotEmpty(message = "*Please provide your name")
     private String name;
 
-    @Column(name = "last_name")
-    @NotEmpty(message = "*Please provide your last name")
-    private String lastName;
+    @Column(name = "personId")
+    @NotEmpty(message = "*Please provide your person ID")
+    private String personId;
+
 
     @Column(name = "active")
     private int active;
@@ -48,10 +48,11 @@ public class User {
     @Column(name = "saldo")
     private Double saldo;
 
-    @Column(name = "accountnumber")
+    @Column(name = "accountNumber")
     private long accountNumber;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
 }
