@@ -25,21 +25,21 @@ public class User {
     private int id;
 
     @Column(name = "email")
-    @Email(message = "*Please provide a vaild Email!")
-    @NotEmpty(message = "*Please provide a Email")
+    @Email(message = "*Proszę podać prawidłowy Email!")
+    @NotEmpty(message = "*Proszę podać Email")
     private String email;
 
     @Column(name = "password")
-    @Length(min = 5, message = "*Your password must have at least 5 characters")
-    @NotEmpty(message = "*Please provide your password")
+    @Length(min = 5, message = "*Minimalna długoś hasła to 5 znaków!")
+    @NotEmpty(message = "*Proszę podać hasło")
     private String password;
 
     @Column(name = "name")
-    @NotEmpty(message = "*Please provide your name")
+    @NotEmpty(message = "*Proszę podać swoje imię!")
     private String name;
 
-    @Column(name = "last_name")
-    @NotEmpty(message = "*Please provide your last name")
+    @Column(name = "last_name")/*Person ID*/
+    @NotEmpty(message = "*Proszę podać swoj numer pesel!")
     private String lastName;
 
     @Column(name = "active")
